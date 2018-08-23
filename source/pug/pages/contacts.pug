@@ -1,0 +1,100 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'contacts-page';
+	- var classWrapper = 'contacts';
+	- var page = 'contacts';
+
+block title
+	title Контакты
+
+block header
+	include ../modules/header
+	+header()
+	
+block main
+	.contacts.container
+		.contacts__main.row
+			.col-md-6
+				h1 Наши контакты
+				ul.contacts__list.clearfix
+					li.contacts__item.contacts__item--tel
+						.contacts__img
+							img.svg(src=require("../../components/images/tel.svg"), alt="")
+						.contacts__name
+							h5 Телефон
+						.contacts__info
+							p
+								a(href="tel:+380940978965") 1. +38(094) 09 78 965
+							p
+								a(href="tel:+380946478509") 2. +38(094) 64 78 509
+					li.contacts__item.contacts__item--address
+						.contacts__img
+							img.svg(src=require("../../components/images/icon-marker.svg"), alt="")
+						.contacts__name
+							h5 Адрес
+						.contacts__info
+							p
+								|Keas 69 Str. 15234, Chalandri Athens, Greece
+					li.contacts__item.contacts__item--email
+						.contacts__img
+							img.svg(src=require("../../components/images/envelope.svg"), alt="")
+						.contacts__name
+							h5 E-mail
+						.contacts__info
+							a(href="mailto:autovukup@gmail.com") autovukup@gmail.com
+				.contacts__map#map
+			.col-md-6
+				.order-form
+					.order-form__block
+						.order-form__title
+							p Оставить заявку
+						form
+							ul.order-form__aim.row
+								li.form-group.col-sm-12
+									p Ваша цель:
+								li.form-group.col-sm-6
+									.radio.active
+										label(for='radio1')
+											input(type='radio', name='radio', id='radio1')
+											| Хочу купить
+								
+								li.form-group.col-sm-6
+									.radio
+										label(for='radio2')
+											input(type='radio', name='radio', id='radio2')
+											.radio-square
+											| Хочу продать
+							ul.order-form__car.row
+								li.form-group.col-sm-12
+									p Машина:
+								li.form-group.order-form__brand.col-sm-12
+									select.selectpicker.custom-picker(title='Марка', id='brand', required)
+										option BMW
+										option Mazda
+										option Mitsubishi
+										option Audi
+								li.form-group.order-form__model.col-sm-6
+									select.selectpicker.custom-picker(title='Модель', id='model', required)
+										option BMW
+										option Mazda
+										option Mitsubishi
+										option Audi
+								li.form-group.order-form__year.col-sm-6
+									select.selectpicker.custom-picker(title='Год', id='year', required)
+										option 2015
+										option 2016
+										option 2017
+										option Audi
+							ul.order-form__contacts.row
+								li.form-group.col-sm-12
+									p Контакты:
+								li.form-group.order-form__name.col-sm-6
+									input.form-control(type="text", placeholder="Имя", required)
+								li.form-group.order-form__lastname.col-sm-6
+									input.form-control(type="text", placeholder="Фамилия", required)
+								li.form-group.order-form__tel.col-sm-6
+									input.form-control(type="text", placeholder="Телефон", required)
+								li.form-group.order-form__city.col-sm-6
+									input.form-control(type="text", placeholder="Город", required)
+							button.btn.btn--send(type="submit") Отправить

@@ -1,0 +1,105 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'index-page';
+	- var classWrapper = 'index';
+	- var page = 'index';
+
+block title
+	title Index
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	.main
+		.main__top
+		.main__main
+		.main__banner.container
+			.slider.slick-main
+				mixin autoSlider(title, text, img)
+					div.hero-slide
+						.slick-main__item
+							.slick-main__left
+								.slick-main__title
+									h1 #{title}
+								.slick-main__text
+									p #{text}
+								a(href="#").btn.btn--order Оставить заявку
+							.slick-main__right
+								.slick-main__img
+									img(src=require("../../components/images/auto-" + img + '.png'), alt="", data-animation="fadeInRightBig", data-delay="0.5s")
+				+autoSlider('Выкуп любых автомобилей', 'Экономия Ваших сил и времени', '1')
+				+autoSlider('Выкуп любых автомобилей', 'Экономия Ваших сил и времени', '1')
+				+autoSlider('Выкуп любых автомобилей', 'Экономия Ваших сил и времени', '1')
+		.main__form.container
+			.order-form#orderForm
+				.order-form__block
+					a(href="#").order-form__close#orderFormClose
+						img.svg(src=require("../../components/images/close.svg"), alt="")
+					.order-form__title
+						p Оставить заявку
+					form
+						ul.order-form__aim.row
+							li.form-group.col-xs-12
+								p Ваша цель
+							
+							li.form-group.col-xs-6
+								.radio.active
+									label(for='radio1')
+										input(type='radio', name='radio', id='radio1')
+										| Хочу купить
+							
+							li.form-group.col-xs-6
+								.radio
+									label(for='radio2')
+										input(type='radio', name='radio', id='radio2')
+										.radio-square
+										| Хочу продать
+						ul.order-form__car.row
+							li.form-group.col-xs-12
+								p Машина
+							li.form-group.order-form__brand.col-xs-12
+								select.selectpicker.custom-picker(title='Марка', id='brand', required)
+									option BMW
+									option Mazda
+									option Mitsubishi
+									option Audi
+							li.form-group.order-form__model.col-xs-6
+								select.selectpicker.custom-picker(title='Модель', id='model', required)
+									option BMW
+									option Mazda
+									option Mitsubishi
+									option Audi
+							li.form-group.order-form__year.col-xs-6
+								select.selectpicker.custom-picker(title='Год', id='year', required)
+									option 2015
+									option 2016
+									option 2017
+									option Audi
+						ul.order-form__contacts.row
+							li.form-group.col-xs-12
+								p Контакты
+							li.form-group.order-form__name.col-xs-6
+								input.form-control(type="text", placeholder="Имя", required)
+							li.form-group.order-form__lastname.col-xs-6
+								input.form-control(type="text", placeholder="Фамилия", required)
+							li.form-group.order-form__tel.col-xs-6
+								input.form-control(type="text", placeholder="Телефон", required)
+							li.form-group.order-form__city.col-xs-6
+								input.form-control(type="text", placeholder="Город", required)
+						button.btn.btn--send(type="submit") Отправить
+				.order-success#orderSuccess
+					a(href="#").order-success__close#orderSuccessClose
+						img.svg(src=require('../../components/images/close.svg'), alt="")
+					.order-success__block
+						.order-success__img
+							img.svg(src=require("../../components/images/ok.svg"), alt="")
+						.order-success__title
+							p Ваша заявка успешно отправлена!
+						.order-success__txt
+							P Мы ответим вам в ближайшее время
+			.order-call
+				a(href="tel:+380979909876")
+					img.svg(src=require('../../components/images/phone.svg'), alt="")

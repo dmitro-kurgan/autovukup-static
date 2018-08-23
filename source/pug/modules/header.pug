@@ -1,0 +1,41 @@
+mixin header()
+	header
+		.header
+			.container
+				.header__content
+					.header__top#headerTop
+						.header__contacts
+							.header__contacts-close#headerContactsClose
+								img.svg(src=require("../../components/images/close.svg"), alt="")
+							ul.clearfix
+								li.header__contacts--tel
+									a(href="tel:+380979909876") +38(097) 99 09 876
+										img.svg(src=require("../../components/images/tel.svg"), alt="")
+								li.header__contacts--mail
+									a(href="mailto:autovukup@gmail.com") autovukup@gmail.com
+										img.svg(src=require("../../components/images/envelope.svg"), alt="")
+					.header__main#headerMain
+						.header__contacts-dropdown#contactsDropdown
+							img.svg(src=require("../../components/images/contacts.svg"), alt="")
+						.header__logo
+							a(href="./")
+						.header__hamburger#hamburger
+							span.top
+							span.mid
+							span.bottom
+						.header__nav#headerMenu
+							.header__nav-title
+								p Меню
+							ul.clearfix#menu
+								li
+									a(class=(page === "index") ? "active" : "", href="./") Главная
+								li
+									a(class=(page === "place") ? "active" : "", href="#") Авто площадка
+								li(data-menuanchor="anchor1")
+									a(href="page-two.html#anchor1") Срочный выкуп авто
+								li(data-menuanchor="anchor2")
+									a(href="page-two.html#anchor2") Выкуп авто после ДТП
+								li(data-menuanchor="anchor3")
+									a(href="page-two.html#anchor3") Выкуп кредитных автомобилей
+								li
+									a(class=(page === "contacts") ? "active" : "", href="contacts.html") Контакты

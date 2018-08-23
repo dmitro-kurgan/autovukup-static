@@ -1,0 +1,320 @@
+header {
+	.header {
+		&__top {
+			display: flex;
+			justify-content: flex-end;
+			padding: 24px 0;
+			@media (max-height: 800px) {
+				padding: 10px 0;
+			}
+			@media #{$mobile} {
+				justify-content: center;
+				background-color: rgba(#000, 1);
+			    // height: calc(100vh);
+			    padding: 30px 0 20px 0;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				left: 0px;
+				z-index: 999;
+				@include addPrefix(transform, translate(0px, -100%));
+				transition: .3s transform ease-in-out;
+				&.opened {
+				    @include addPrefix(transform, translate(0px, 0px));
+				}
+			}
+		}
+		&__contacts {
+			color: #414141;
+			@media #{$mobile} {
+				color: #fff;
+			}
+			&-close {
+				text-align: right;
+				position: absolute;
+				right: 15px;
+				top: 10px;
+				display: none;
+				@media #{$mobile} {
+					display: block;
+					svg {
+						fill: #fff;
+						height: 12px;
+						width: 12px;
+					}
+				}
+			}
+			& > ul {
+				& > li {
+					float: left;
+					& + li {
+						margin-left: 30px;
+						@media (max-width: 1439px) {
+							margin-left: 20px;
+						}
+					}
+					& > a {
+						font-size: 14px;
+						font-weight: 500;
+						padding-left: 25px;
+						display: flex;
+						align-items: center;
+						position: relative;
+						@media #{$desctop} {
+							font-size: 12px;
+						}
+						// &:before {
+						// 	background-size: contain;
+						// 	background-repeat: no-repeat;
+						// 	background-position: center;
+						// }
+
+						svg {
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							bottom: 0px;
+							margin: auto;
+							@media #{$mobile} {
+								fill: #fff;
+							}
+						}
+					}
+				}
+			}
+			&--tel {
+				a {
+					svg {
+						width: 18px;
+						height: 19px;
+					}
+				}
+			}
+			&--mail {
+				a {
+					svg {
+						width: 17px;
+						height: 12px;
+					}
+				}
+			}
+		}
+		&__main {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: relative;
+			@media #{$mobile} {
+				justify-content: center;
+				padding: 15px 0;
+			}
+		}
+		&__contacts-dropdown {
+			width: 33px;
+			height: 33px;
+			margin: auto 0px;
+			display: none;
+			position: relative;
+			cursor: pointer;
+			background-color: #000;
+			padding: 7px 6px;
+			@media #{$mobile} {
+				display: inline-block;
+				vertical-align: middle;
+				position: absolute;
+				// bottom: 0px;
+				left: 0px;
+			}
+			svg {
+				width: 100%;
+				height: 100%;
+				fill: #fff;
+			}
+		}
+		&__hamburger {
+			width: 33px;
+			height: 33px;
+			margin: auto 0px;
+			display: none;
+			position: relative;
+			cursor: pointer;
+			background-color: #000;
+			padding: 7px 6px;
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			@media #{$tablet} {
+				display: block;
+			}
+			@media #{$mobile} {
+				bottom: initial;
+			}
+			span {
+				& + span {
+					margin-top: 5px;
+				}
+			}
+			.top, .mid, .bottom {
+				display: block;
+				height: 3px;	
+				background-color: #fff;
+				transition: $main_transition;
+			}
+			.top {
+				top: 0px;
+				width: 21px;
+			}
+			.mid {
+				top: 7px;
+				width: 21px;
+				@media #{$mobile} {
+					max-width: 15px;
+				}
+			}
+			.bottom {
+				bottom: 0px;
+				width: 21px;
+			}
+			&.opened {
+				.top {
+					@include addPrefix(transform, rotate(45deg) translate(4px, 7px));
+					width: 25px;
+				}
+				.mid {
+					opacity: 0;
+				}
+				.bottom {
+					@include addPrefix(transform, rotate(-45deg) translate(4px, -8px));
+					width: 25px;
+				}
+			}
+		}
+		&__logo {
+			a {
+				display: block;
+				width: 397px;
+				height: 56px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-image: url(../images/logo.svg);
+				@media (max-height: 800px) {
+					height: 36px;
+					width: 288px;
+				}
+				@media #{$desctop-md} {
+					height: 36px;
+					width: 288px;
+				}
+				@media #{$desctop} {
+					height: 28px;
+					width: 211px;
+				}
+				@media #{$mobile} {
+					height: 23px;
+					width: 183px;
+				}
+			}
+		}
+		&__nav {
+			@media #{$tablet} {
+				background-color: rgba(#000, 1);
+			    height: calc(100vh);
+				position: fixed;
+				// position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 999;
+				@include addPrefix(transform, translate(calc(-100% - 15px), 0px));
+				transition: .3s transform ease-in-out;
+				&.opened {
+				    @include addPrefix(transform, translate(0px, 0px));
+				}
+			}
+			@media #{$mobile} {
+				margin-top: 53px;
+				position: absolute;
+				right: -15px;
+				left: -15px;
+				overflow-y: scroll;
+			}
+			&-title {
+				font-size: 28px;
+				font-weight: 600;
+				color: #fff;
+				margin: 20px 0;
+				text-align: center;
+				display: none;
+				@media #{$mobile} {
+					display: block;
+				}
+			}
+			& > ul {
+				& > li {
+					float: left;
+					@media #{$tablet} {
+						float: none;
+						
+					}
+					// @media #{$mobile} {
+
+					// }
+					&:last-child {
+						margin-right: 25px;
+						@media (max-width: 1599px) {
+							margin-right: 20px;
+						}
+						@media #{$tablet} {
+							margin-right: 0px;
+						}
+					}
+					& + li {
+						margin-left: 30px;
+						@media (max-width: 1599px) {
+							margin-left: 20px;
+						}
+						@media #{$tablet} {
+							margin-left: 0px;
+							// margin-top: 20px;
+						}
+					}
+					& > a {
+						font-size: 16px;
+						font-weight: 500;
+						color: #9f9f9f;
+						transition: $main_transition;
+						@media (max-width: 1439px) {
+							font-size: 14px;
+						}
+						@media #{$desctop} {
+							font-size: 12px;
+						}
+						@media #{$tablet} {
+							padding-left: 10px;
+							padding-right: 10px;
+							color: #fff;
+							height: 40px;
+							line-height: 40px;
+							width: 100%;
+							display: block;
+						}
+						@media #{$mobile} {
+							height: initial;
+							line-height: initial;
+							font-size: 21px;
+							padding: 10px 15px;
+						}
+						&:hover {
+							background-color: #fff;
+							color: #000;
+						}
+						&.active {
+							background-color: #fff;
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+}

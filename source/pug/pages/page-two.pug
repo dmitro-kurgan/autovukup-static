@@ -1,0 +1,105 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'page-two-page';
+	- var classWrapper = 'page-two';
+	- var page = 'page-two';
+
+block title
+	title Index
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	#fullpage.page-two
+		section.section#section0.fp-auto-height
+			.slide#slide0
+				.page-two__block.page-two__block--md
+					.page-two__box.row
+						.col-sm-6.page-two__info
+							div
+								h2 
+									|Срочный
+									br
+									| выкуп авто
+								p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae laoreet odio. Duis nec pulvinar risus. Mauris rhoncus tincidunt ligula et porta. Praesent posuere dui sed ipsum rutrum dignissim. Cras tempus tempor enim in euismod. Vestibulum varius venenatis libero non rutrum Donec ultrices ante risus, finibus euismod mi tincidunt a. Nam lobortis tincidunt scelerisque. Sed eu facilisis tellus, eu viverra quam.
+								span
+									| AutoВыкуп -
+									a(href="contacts.html") Связаться с нами
+						.col-sm-6.page-two__photo
+							.page-two__img.page-two__img--lg
+								img(src=require("../../components/images/car.png"), alt="")
+						.page-two__link
+							a(href="contacts.html") Оставить заявку на этот вид услуг
+						a(href="page-two.html#anchor2").page-two__next
+							span
+							span
+		section.section#section1.fp-auto-height
+			.slide#slide1
+				.page-two__block.page-two__block--md
+					.page-two__box.row
+						.col-sm-6.page-two__info
+							div
+								h2 
+									|Выкуп авто
+									br
+									| после ДТП
+								p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae laoreet odio. Duis nec pulvinar risus. Mauris rhoncus tincidunt ligula et porta. Praesent posuere dui sed ipsum rutrum dignissim. Cras tempus tempor enim in euismod. Vestibulum varius venenatis libero non rutrum Donec ultrices ante risus, finibus euismod mi tincidunt a. Nam lobortis tincidunt scelerisque. Sed eu facilisis tellus, eu viverra quam.
+								span
+									| AutoВыкуп -
+									a(href="contacts.html") Связаться с нами
+						.col-sm-6.page-two__photo
+							.page-two__img.page-two__img--lg
+								img(src=require("../../components/images/car.png"), alt="")
+						.page-two__link
+							a(href="contacts.html") Оставить заявку на этот вид услуг
+						a(href="page-two.html#anchor3").page-two__next
+							span
+							span
+		section.section#section2.fp-auto-height
+			.slide#slide2
+				.page-two__block.page-two__block--lg
+					.page-two__box.row
+						.col-sm-8.page-two__info
+							div
+								h2 
+									|Выкуп кредитных
+									br
+									| автомобилей
+								p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae laoreet odio. Duis nec pulvinar risus. Mauris rhoncus tincidunt ligula et porta. Praesent posuere dui sed ipsum rutrum dignissim. Cras tempus tempor enim in euismod. Vestibulum varius venenatis libero non rutrum Donec ultrices ante risus, finibus euismod mi tincidunt a.
+								div.row
+									ul.col-sm-6
+										li
+											| Lorem ipsum dolor sit amet, consectetur
+										li
+											| Dipiscing elit хaecenas vitae laoreet odio.
+										li
+											| Duis nec pulvinar risus мauris rhoncus
+										li
+											| Tincidunt ligula et porta.
+										li
+											| Maecenas vitae laoreet odio
+									ul.col-sm-6
+										li
+											| Lorem ipsum dolor sit amet, consectetur
+										li
+											| Dipiscing elit хaecenas vitae laoreet odio.
+										li
+											| Duis nec pulvinar risus мauris rhoncus
+										li
+											| Tincidunt ligula et porta.
+										li
+											| Maecenas vitae laoreet odio
+								p
+									| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae laoreet odio. Duis nec pulvinar risus. Mauris rhoncus tincidunt ligula et porta. Praesent posuere dui sed ipsum rutrum
+						.col-sm-4.page-two__photo
+							ul
+								li.page-two__img.page-two__img--sm(style="background-image: url(" + require('../../components/images/car-1.jpg') +")")
+								li.page-two__img.page-two__img--sm(style="background-image: url(" + require('../../components/images/car-2.jpg') +")")
+						.page-two__link
+							a(href="contacts.html") Оставить заявку на этот вид услуг
