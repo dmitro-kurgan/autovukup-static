@@ -1,0 +1,1 @@
+# autovukup-static
